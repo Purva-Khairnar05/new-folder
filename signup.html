@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            background-color: rgb(99, 64, 64);
+        }
+        .main {
+            background-color: rgb(127, 94, 94);
+            border-radius: 15px;
+            color: white;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            margin-top: 220px;
+            margin-left: 590px;
+        }
+        .container {
+            padding: 5px;
+            align-self: center;
+            width: 280px;
+        }
+        .heading {
+            font-size: 30px;
+            align-self: center;
+            margin-bottom: 30px;
+        }
+        #img {
+            height: 20px;
+        }
+        .submit-btn {
+            height: 30px;
+            width: 60px;
+            border-radius: 10px;
+            align-self: center;
+            border: none;
+        }
+        #username {
+            border: 1px solid #ccc;
+            width: 270px;
+            padding-left: 5px;
+            height: 25px;
+            border-radius: 10px;
+            background-color: rgb(127, 94, 94);
+        }
+        #pass {
+            border: none;
+            width: 250px;
+            padding-left: 5px;
+            height: 25px;
+            border-radius: 10px;
+            outline: none;
+            background-color: rgb(127, 94, 94);
+        }
+        .pwd-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            width: fit-content;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <span class="heading">Form</span><br>
+        <div class="container">
+            <span class="label">Username</span><br>
+            <input type="text" id="username"><br>
+            <span class="label">Password</span><br>
+            <div class="pwd-container">
+                <input type="text" id="pass" /> <img src="./images/hide.png" id="img" onclick="eye()" />
+            </div>
+        </div><br>
+        <button  type="submit" class="submit-btn">Submit</button>
+    </div>
+    <script>
+        const passelement = document.getElementById("pass");
+        const imageelement = document.getElementById("img");
+        function eye() {
+            if (passelement.type == "password") {
+                passelement.type = "text";
+                imageelement.src = "./images/hide.png"
+            } else {
+                passelement.type = "password";
+                imageelement.src ="./images/view.png"
+            }
+        }
+    </script>
+</body>
+</html>
